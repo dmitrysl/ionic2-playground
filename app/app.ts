@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
-import {provideCloud, CloudSettings} from '@ionic/cloud-angular';
+import {Auth, User, CloudSettings, provideCloud} from '@ionic/cloud-angular';
 
 
 const cloudSettings: CloudSettings = {
@@ -18,13 +18,21 @@ export class MyApp {
 
   private rootPage: any;
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, public auth: Auth, public user: User) {
     this.rootPage = TabsPage;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      // let details = {'email': 'dmitrys@interlink-ua.com', 'password': '[1GcUU&p+y"KG{zn2M]`V@E.rx2L~&F)'};
+      // this.auth.signup(details).then(() => {
+      //   return this.auth.login('basic', details);
+      // }).then(() => {
+      //   // `this.user` is now the authenticated user
+      // }, (err) => {
+      //   // something went wrong!
+      // });
     });
   }
 }
