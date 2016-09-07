@@ -8,3 +8,10 @@ To run on iOS:
 
 To run on Android:
   ionic run android
+
+ 
+# Setup ionic cloud
+https://docs.ionic.io/setup.html
+  $ npm install @ionic/cloud-angular --save
+  $ ionic io init
+  // Enter email/pass for https://apps.ionic.io
