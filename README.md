@@ -15,6 +15,14 @@ To run on Android:
   $ ionic run android
 ```
 
+# Run in emulator ios
+
+  $ ionic emulate ios
+  - By default this command runs default emulator iPhone-4s, but you can specify another target device
+  $ ios-sim showdevicetypes
+  - choose ios type
+  $ ionic emulate ios --target="iPhone-7-Plus"
+
  
 # Setup ionic cloud
 https://docs.ionic.io/setup.html

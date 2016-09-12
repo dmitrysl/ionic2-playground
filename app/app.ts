@@ -25,7 +25,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
-      // let details = {'email': 'dmitrys@interlink-ua.com', 'password': '[1GcUU&p+y"KG{zn2M]`V@E.rx2L~&F)'};
+      // let details = {'email': 'email', 'password': 'pass'};
       // this.auth.signup(details).then(() => {
       //   return this.auth.login('basic', details);
       // }).then(() => {
