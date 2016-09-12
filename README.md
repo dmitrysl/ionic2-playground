@@ -16,12 +16,17 @@ To run on Android:
 ```
 
 # Run in emulator ios
-
+```bash
   $ ionic emulate ios
+```  
   - By default this command runs default emulator iPhone-4s, but you can specify another target device
+```bash  
   $ ios-sim showdevicetypes
+```  
   - choose ios type
+```bash  
   $ ionic emulate ios --target="iPhone-7-Plus"
+```  
 
  
 # Setup ionic cloud
