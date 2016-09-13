@@ -1,21 +1,24 @@
 machine:
-  xcode:
-    version: 8.0
-  environment:
-    XCODE_SCHEME: "ionic2-playground"
-    XCODE_PROJECT: "ionic2-playground.xcodeproj"
+#  xcode:
+#    version: 8.0
+#  environment:
+#    XCODE_SCHEME: "ionic2-playground"
+#    XCODE_PROJECT: "ionic2-playground.xcodeproj"
+  node:
+    version: 6.5.0
 general:
   branches:
     only:
-    - master
+      - master
 dependencies:
   pre:
-   - brew list -1 | while read line; do brew unlink $line; brew link $line; done
-   - brew install node && sudo brew postinstall node
-   - brew install caskroom/cask/brew-cask
-   - brew cask install java
-   - brew install android-sdk
-   - ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter platform-tools,build-tools-22.0.1,android-22
+#   - brew list -1 | while read line; do brew unlink $line; brew link $line; done
+#   - brew install node && sudo brew postinstall node
+#   - brew install caskroom/cask/brew-cask
+#   - brew cask install java
+#   - brew install android-sdk
+#   - ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter platform-tools,build-tools-22.0.1,android-22
+    - echo y | android update sdk --no-ui --all --filter platform-tools,build-tools-22.0.1,android-22
   override:
     - sudo npm cache clean
     - sudo npm install -g ionic@beta
@@ -26,14 +29,15 @@ dependencies:
     - ionic prepare
 #    - ./builds/sign-ios.sh
 test:
-  override:
-    - echo "Do your tests here"
+  pre:
     # start the emulator
     - emulator -avd circleci-android22 -no-audio -no-window:
         background: true
         parallel: true
     # wait for it to have booted
     - circle-android wait-for-boot
+  override:
+    - echo "Do your tests here"
     - ionic run android
 #    - npm test
 #    - npm run build
