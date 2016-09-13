@@ -14,4 +14,18 @@
       @ionicframework
     </ion-item>
   </ion-list>
+  <div>
+    {{ errorMessage }}
+  </div>
+  <ion-card>
+    <ion-card-header>
+      Picture
+    </ion-card-header>
+    <ion-card-content>
+      Latest Picture:
+      <div *ngIf="!base64Image">No photo</div>
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
+  <button (click)="takePicture()">Take a Picture</button>
 </ion-content>
