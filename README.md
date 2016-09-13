@@ -1,3 +1,6 @@
+
+[![Build Status](https://circleci.com/gh/dmitrysl/ionic2-playground.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/dmitrysl/ionic2-playground)
+
 # Playground for Ionic 2
 
 To run in the browser (great for initial development):
