@@ -4,8 +4,6 @@ machine:
   environment:
     XCODE_SCHEME: "ionic2-playground"
     XCODE_PROJECT: "ionic2-playground.xcodeproj"
-  node:
-    version: 6.5.0
 general:
   branches:
     only:
